@@ -764,7 +764,7 @@ void Ledger::asyncGetNonceList(bcos::protocol::BlockNumber _startNumber, int64_t
     LEDGER_LOG(INFO) << "GetNonceList request" << LOG_KV("startNumber", _startNumber)
                      << LOG_KV("offset", _offset);
 
-    if (_startNumber < 0 || _offset < 0 || _startNumber > _offset)
+    if (_startNumber < 0 || _offset < 0)
     {
         LEDGER_LOG(ERROR) << "GetNonceList error";
         _onGetList(BCOS_ERROR_PTR(LedgerError::ErrorArgument, "Wrong argument"), nullptr);
